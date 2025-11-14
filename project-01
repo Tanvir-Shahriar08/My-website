@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Full Website</title>
+
+    <style>
+        :root {
+            --bg: #f6f6f6;
+            --text: #333;
+            --card: #ffffff;
+            --primary: #4A70E2;
+        }
+        body.dark {
+            --bg: #1b1b1b;
+            --text: #eeeeee;
+            --card: #2b2b2b;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        header {
+            background: var(--primary);
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .logo {
+            font-size: 40px;
+            font-weight: bold;
+            animation: slideIn 1s ease forwards;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 15px 20px;
+            display: block;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background: #444;
+        }
+
+        section {
+            padding: 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .card {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin: 15px 0;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            background: var(--card);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .blog-post {
+            border-left: 5px solid var(--primary);
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            background: #222;
+            color: white;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        button.dark-toggle {
+            background: var(--primary);
+            border: none;
+            padding: 10px 15px;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">🌐 My Website</div>
+    <p>Your all-in-one personal website.</p>
+    <button class="dark-toggle" onclick="toggleDark()">Toggle Dark Mode</button>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+    <h2>Welcome</h2>
+    <div class="card">
+        <p>This website includes everything you asked for: logo, dark mode, animations, portfolio, blog, contact form, and more.</p>
+    </div>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+        <p>Hello! This is a fully functional public website template built with HTML. You can customize anything here.</p>
+    </div>
+</section>
+
+<section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio-grid">
+        <div class="portfolio-item">Project 1</div>
+        <div class="portfolio-item">Project 2</div>
+        <div class="portfolio-item">Project 3</div>
+        <div class="portfolio-item">Project 4</div>
+    </div>
+</section>
+
+<section id="blog">
+    <h2>Blog</h2>
+    <div class="blog-post card">
+        <h3>My First Blog Post</h3>
+        <p>This is an example blog post where you can write updates or share your ideas.</p>
+    </div>
+
+    <div class="blog-post card">
+        <h3>Another Article</h3>
+        <p>Everything on this page is easy to edit — just change the text in the HTML file.</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+        <form>
+            <label>Name:</label><br>
+            <input type="text" style="width:100%; padding:10px;"><br><br>
+
+            <label>Email:</label><br>
+            <input type="email" style="width:100%; padding:10px;"><br><br>
+
+            <label>Message:</label><br>
+            <textarea style="width:100%; padding:10px;" rows="6"></textarea><br><br>
+
+            <button style="background:var(--primary); color:white; padding:10px 15px; border:none; border-radius:5px; cursor:pointer;">
+                Send Message
+            </button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    © 2025 My Website — All Rights Reserved
+</footer>
+
+<script>
+    function toggleDark() {
+        document.body.classList.toggle("dark");
+    }
+</script>
+
+</body>
+</html>
